@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/music_backgroud"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:onClick="backClick"
+            android:id="@+id/mp3_back_music_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="3dp"
+            android:src="@drawable/music_back_image" />
+
+        <ImageView
+            android:id="@+id/mp3_destroy_music_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/music_more_image" />
+
+        <TextView
+            android:id="@+id/mp3_musicname_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:maxLength="20"
+            android:singleLine="true"
+            android:text="歌名"
+            android:textColor="@color/ivory"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/music_auther_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mp3_musicname_txt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:singleLine="true"
+            android:text="作者"
+            android:textColor="@color/ivory"
+            android:textSize="15sp" />
+
+        <com.zhangli.myapplication.custom.VisualizerView
+            android:id="@+id/activity_player_visualizer"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_below="@id/music_auther_txt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="55dp"/>
+
+
+        <com.zhangli.myapplication.CircleImageView
+            android:id="@+id/music_image_imageview"
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:layout_below="@id/music_auther_txt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/music_img" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp">
+
+        <TextView
+            android:id="@+id/mp3_current_time_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:text="00:00"
+            android:textColor="@color/ivory" />
+
+        <TextView
+            android:id="@+id/mp3_total_time_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:text="00:00"
+            android:textColor="@color/ivory" />
+
+        <SeekBar
+            android:id="@+id/mp3_player_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/mp3_total_time_txt"
+            android:layout_toRightOf="@id/mp3_current_time_txt"
+            android:progressDrawable="@drawable/seekbar_progressdrawable_selector"
+            android:thumb="@drawable/sekkbar_music_yuandian" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/mp3_playter_music_img"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/music_play_btn" />
+
+        <ImageView
+            android:id="@+id/mp3_prce_music_img"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/mp3_playter_music_img"
+            android:src="@drawable/prce_music_btn" />
+
+        <ImageView
+            android:id="@+id/mp3_next_music_img"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/mp3_playter_music_img"
+            android:src="@drawable/next_music_btn" />
+    </RelativeLayout>
+
+</LinearLayout>
