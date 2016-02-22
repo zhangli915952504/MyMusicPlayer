@@ -3,8 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:paddingBottom="5dp"
-    android:paddingTop="5dp">
+    android:paddingBottom="3dp"
+    android:paddingTop="3dp">
 
     <View
         android:id="@+id/music_list_selected"
@@ -15,8 +15,8 @@
 
     <ImageView
         android:id="@+id/music_list_icon"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:paddingLeft="10dp"
         android:src="@drawable/music_img" />
 
@@ -32,8 +32,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
+            android:text="歌曲名"
             android:textColor="@color/crimson"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tv_music_list_artist"
@@ -41,7 +42,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:singleLine="true"
+            android:text="作者"
             android:textColor="@color/turquoise"
-            android:textSize="12sp" />
+            android:textSize="16sp" />
     </LinearLayout>
 </LinearLayout>

@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zhangli.myapplication">
+<manifest package="com.zhangli.myapplication"
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <!-- 相机 -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <!-- 振动 -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <!-- 网络 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -12,31 +18,46 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".activities.WelcomeActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-        <service android:name=".MusicService" />
+        <service android:name=".service.MusicService"/>
 
         <activity
-            android:name=".MusicCursorListActivity"
-            android:screenOrientation="portrait" />
+            android:name=".activities.MusicCursorListActivity"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name=".MusicActivity"
-            android:screenOrientation="portrait" />
+            android:name=".activities.MusicActivity"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name=".SaomiaoActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".MusicListActivity" />
+            android:name=".activities.SaomiaoActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.MusicListActivity"/>
+        <activity android:name=".activities.TwoMusicListActivity"/>
+        <activity
+            android:name="com.xys.libzxing.zxing.activity.CaptureActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden">
+        </activity>
 
+        <!-- <receiver -->
+        <!-- android:name=".service.MusicService$MyBroadcastService"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="service"/> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
 
-        <activity android:name=".TwoMusicListActivity" />
-
+        <activity android:name=".activities.ErweimaActivity">
+        </activity>
     </application>
 
 </manifest>

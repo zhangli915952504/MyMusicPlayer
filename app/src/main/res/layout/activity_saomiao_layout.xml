@@ -1,27 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    tools:context="com.zhangli.myapplication.SaomiaoActivity">
+    android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginLeft="11dp"
-        android:src="@drawable/scan_phone_icon1" />
-
-    <TextView
-        android:id="@+id/saomiao_txt"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:gravity="center"
-        android:text="正在扫描..."
-        android:textColor="@color/black"
-        android:textSize="18sp" />
+        android:orientation="vertical"
+        tools:context=".activities.SaomiaoActivity">
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="11dp"
+            android:src="@drawable/scan_phone_icon1"/>
+
+        <TextView
+            android:id="@+id/saomiao_txt"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:gravity="center"
+            android:text="正在扫描..."
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+
+    <com.zhangli.myapplication.utils.ClickHavaCircle
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</FrameLayout>
