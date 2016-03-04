@@ -11,6 +11,9 @@ import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.View;
 
+/**
+ * 音乐平衡器
+ */
 
 public class VisualizerView extends View {
 

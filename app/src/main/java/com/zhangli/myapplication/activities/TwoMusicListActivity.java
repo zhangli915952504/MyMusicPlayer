@@ -224,16 +224,19 @@ public class TwoMusicListActivity extends Activity implements OnItemClickListene
     protected void onDestroy() {
         super.onDestroy();
         b = false;
+        if (mNotificationManager != null) {
+            mNotificationManager.cancelAll();
+        }
         if (mServiceConnection != null) {
             unbindService(mServiceConnection);
         }
-        if(myBroadToast!=null){
-            myBroadToast=null;
+        if (myBroadToast != null) {
+            myBroadToast = null;
         }
-        if(bReceiver!=null){
-            bReceiver=null;
+        if (bReceiver != null) {
+            bReceiver = null;
         }
-        mNotificationManager.cancelAll();
+
     }
 
     private void registerReceiver() {
@@ -667,11 +670,11 @@ public class TwoMusicListActivity extends Activity implements OnItemClickListene
         //这里加了广播，所及INTENT的必须用getBroadcast方法
         PendingIntent intent_prev = PendingIntent.getBroadcast(this, 1, buttonIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         mRemoteViews.setOnClickPendingIntent(R.id.btn_custom_prev, intent_prev);
-		/* 播放/暂停  按钮 */
+        /* 播放/暂停  按钮 */
         buttonIntent.putExtra(INTENT_BUTTONID_TAG, BUTTON_PALY_ID);
         PendingIntent intent_paly = PendingIntent.getBroadcast(this, 2, buttonIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         mRemoteViews.setOnClickPendingIntent(R.id.btn_custom_play, intent_paly);
-		/* 下一首 按钮  */
+        /* 下一首 按钮  */
         buttonIntent.putExtra(INTENT_BUTTONID_TAG, BUTTON_NEXT_ID);
         PendingIntent intent_next = PendingIntent.getBroadcast(this, 3, buttonIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         mRemoteViews.setOnClickPendingIntent(R.id.btn_custom_next, intent_next);
